@@ -1,9 +1,30 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="net.sgoliver.android.navigationdrawer.Fragment1">
+    tools:context="mx.edu.itchetumal.concursomovil8.Fragment1">
 
-    <TextView android:layout_width="match_parent" android:layout_height="match_parent"
-        android:text="@string/fragment2" />
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="left|top"
+        android:weightSum="1">
 
+        <TextView
+            android:layout_width="400dp"
+            android:layout_height="wrap_content"
+            android:text="Cliente"
+            android:id="@+id/numeroCliente"
+            android:layout_weight="0.04"
+            android:textSize="30dp" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/nombre"
+            android:layout_weight="0.04"
+            android:text="@string/nombre"
+            android:inputType="none" />
+
+    </LinearLayout>
 </FrameLayout>

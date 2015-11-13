@@ -77,11 +77,9 @@ public class MainActivity extends AppCompatActivity {
                             fragment = new Fragment3();
                             fragmentTransaction = true;
                             break;
-                        case R.id.menu_opcion_1:
-                            Log.i("NavigationView", "Pulsada opción 1");
+                        case R.id.menu_seccion_4:
                             break;
-                        case R.id.menu_opcion_2:
-                            Log.i("NavigationView", "Pulsada opción 2");
+                        case R.id.menu_seccion_5:
                             break;
                     }
 
