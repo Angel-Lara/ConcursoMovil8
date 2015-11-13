@@ -3,28 +3,64 @@
     android:layout_height="match_parent"
     tools:context="mx.edu.itchetumal.concursomovil8.Fragment1">
 
-    <LinearLayout
-        android:orientation="vertical"
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_gravity="left|top"
-        android:weightSum="1">
+        android:layout_height="match_parent">
 
-        <TextView
-            android:layout_width="400dp"
+        <ScrollView
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Cliente"
-            android:id="@+id/numeroCliente"
-            android:layout_weight="0.04"
-            android:textSize="30dp" />
+            android:id="@+id/scrollView2" >
 
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/nombre"
-            android:layout_weight="0.04"
-            android:text="@string/nombre"
-            android:inputType="none" />
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
 
-    </LinearLayout>
+                <TextView
+                    android:layout_width="386dp"
+                    android:layout_height="49dp"
+                    android:text="Cliente"
+                    android:id="@+id/numeroCliente" />
+
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:inputType="textPersonName"
+                    android:text="Nombre"
+                    android:ems="10"
+                    android:id="@+id/nombre" />
+
+                <TimePicker
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/timePicker2" />
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/origen"
+                    android:text="Origen" />
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/destino"
+                    android:text="Origen" />
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Aceptar"
+                    android:id="@+id/aceptar" />
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Cancelar"
+                    android:id="@+id/cancelar" />
+            </LinearLayout>
+        </ScrollView>
+    </RelativeLayout>
+
 </FrameLayout>
