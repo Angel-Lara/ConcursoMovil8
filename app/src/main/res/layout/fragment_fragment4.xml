@@ -1,7 +1,8 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context="mx.edu.itchetumal.concursomovil8.Fragment1">
+    android:layout_height="match_parent" tools:context="mx.edu.itchetumal.concursomovil8.fragment4">
+
+    <!-- TODO: Update blank fragment layout -->
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -10,7 +11,7 @@
         <ScrollView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/scrollView3" >
+            android:id="@+id/scrollView4" >
 
             <LinearLayout
                 android:orientation="vertical"
@@ -18,8 +19,8 @@
                 android:layout_height="match_parent">
 
                 <TextView
-                    android:layout_width="383dp"
-                    android:layout_height="46dp"
+                    android:layout_width="387dp"
+                    android:layout_height="51dp"
                     android:text="Cliente"
                     android:id="@+id/numeroCliente"
                     android:textSize="30dp" />
@@ -35,12 +36,12 @@
                 <DatePicker
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:id="@+id/datePicker2" />
+                    android:id="@+id/datePicker3" />
 
                 <TimePicker
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:id="@+id/timePicker3" />
+                    android:id="@+id/timePicker4" />
 
                 <Button
                     android:layout_width="wrap_content"
@@ -53,8 +54,8 @@
                     android:layout_height="wrap_content"
                     android:text="Cancelar"
                     android:id="@+id/cancelar" />
+
             </LinearLayout>
         </ScrollView>
-
     </RelativeLayout>
 </FrameLayout>

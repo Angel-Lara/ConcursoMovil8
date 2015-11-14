@@ -78,8 +78,12 @@ public class MainActivity extends AppCompatActivity {
                             fragmentTransaction = true;
                             break;
                         case R.id.menu_seccion_4:
+                            fragment = new Fragment4();
+                            fragmentTransaction = true;
                             break;
                         case R.id.menu_seccion_5:
+                            fragment = new Fragment5();
+                            fragmentTransaction = true;
                             break;
                     }
 
