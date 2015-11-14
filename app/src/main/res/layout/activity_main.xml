@@ -11,6 +11,91 @@
     <!-- Contenido de la actividad -->
     <include layout="@layout/content_layout" />
 
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
+
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="Large Text"
+                android:id="@+id/txtResultado"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="54dp" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/txtVal"
+                android:layout_below="@+id/txtResultado"
+                android:layout_alignStart="@+id/txtReg"
+                android:layout_marginTop="34dp" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/txtReg"
+                android:layout_above="@+id/btnInsertar"
+                android:layout_toStartOf="@+id/txtResultado"
+                android:layout_alignEnd="@+id/btnEliminar" />
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent">
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Insertar"
+                    android:id="@+id/btnInsertar"
+                    android:layout_marginTop="46dp"
+                    android:layout_below="@+id/btnEliminar"
+                    android:layout_alignStart="@+id/btnActualizar"
+                    android:layout_column="0" />
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Buscar"
+                    android:id="@+id/btnConsultar"
+                    android:layout_below="@+id/btnActualizar"
+                    android:layout_alignStart="@+id/btnActualizar"
+                    android:layout_column="3" />
+
+                <Button
+                    android:layout_width="111dp"
+                    android:layout_height="wrap_content"
+                    android:text="Eliminar"
+                    android:id="@+id/btnEliminar"
+                    android:layout_alignParentBottom="true"
+                    android:layout_toStartOf="@+id/txtResultado"
+                    android:layout_marginBottom="131dp"
+                    android:layout_column="5" />
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Actualizar"
+                    android:id="@+id/btnActualizar"
+                    android:layout_marginTop="35dp"
+                    android:layout_below="@+id/btnInsertar"
+                    android:layout_alignEnd="@+id/btnEliminar"
+                    android:layout_column="4" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
     <!-- Navigation View -->
     <android.support.design.widget.NavigationView
         android:id="@+id/navview"
