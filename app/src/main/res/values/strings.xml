@@ -26,4 +26,12 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="tarjeta_1" />
     <string name="tarjeta_2">Hotel El Descanso </string>
+    <string name="pick_date">Seleccionar Fecha</string>
+
+    <!-- Categorías -->
+    <string-array name="entradas_categoria">
+        <item>Area Niños</item>
+        <item>Area Fumadores</item>
+        <item>Area no Fumadores</item>
+    </string-array>
 </resources>

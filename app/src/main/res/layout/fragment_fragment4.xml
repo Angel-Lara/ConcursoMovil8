@@ -1,61 +1,70 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
-    android:layout_height="match_parent" tools:context="mx.edu.itchetumal.concursomovil8.fragment4">
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="mx.edu.itchetumal.concursomovil8.Fragment1">
 
-    <!-- TODO: Update blank fragment layout -->
-
-    <RelativeLayout
+    <TextView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="40dp"
+        android:text="Cliente"
+        android:id="@+id/numeroCliente"
+        android:textSize="30dp" />
 
-        <ScrollView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/scrollView4" >
+    <!-- Descripción -->
+    <EditText
+        android:id="@+id/descripcion_input"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Descripción"
+        android:maxLength="128"
+        android:nestedScrollingEnabled="true"
+        android:paddingBottom="16dp"
+        android:paddingTop="16dp"
+        android:layout_below="@+id/numeroCliente"
+        android:layout_alignParentStart="true" />
 
-            <LinearLayout
-                android:orientation="vertical"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
+    <!-- Etiqueta Fecha -->
+    <TextView
+        android:id="@+id/fecha_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/descripcion_input"
+        android:paddingTop="16dp"
+        android:text="Fecha"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:textColor="@android:color/black" />
 
-                <TextView
-                    android:layout_width="387dp"
-                    android:layout_height="51dp"
-                    android:text="Cliente"
-                    android:id="@+id/numeroCliente"
-                    android:textSize="30dp" />
+    <!-- Fecha -->
+    <TextView
+        android:id="@+id/fecha_ejemplo_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/fecha_text"
+        android:text="2015/05/17"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
 
-                <EditText
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:inputType="textPersonName"
-                    android:text="Nombre"
-                    android:ems="10"
-                    android:id="@+id/nombre" />
+    <!-- Categoría -->
+    <Spinner
+        android:id="@+id/categoria_spinner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/categoria_texto"
+        android:entries="@array/entradas_categoria" />
 
-                <DatePicker
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/datePicker3" />
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Cancelar"
+        android:id="@+id/cancelar_reservacion"
+        android:layout_below="@+id/categoria_spinner"
+        android:layout_toEndOf="@+id/aceptar_reservacion" />
 
-                <TimePicker
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/timePicker4" />
 
-                <Button
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Aceptar"
-                    android:id="@+id/aceptar" />
-
-                <Button
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Cancelar"
-                    android:id="@+id/cancelar" />
-
-            </LinearLayout>
-        </ScrollView>
-    </RelativeLayout>
-</FrameLayout>
+</RelativeLayout>
