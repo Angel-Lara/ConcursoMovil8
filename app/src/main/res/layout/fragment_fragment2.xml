@@ -9,14 +9,7 @@ android:paddingRight="@dimen/activity_horizontal_margin"
 android:paddingTop="@dimen/activity_vertical_margin"
 tools:context="mx.edu.itchetumal.concursomovil8.Fragment2">
 
-<TextView
-    android:layout_width="match_parent"
-    android:layout_height="40dp"
-    android:text="Cliente"
-    android:id="@+id/numeroCliente"
-    android:textSize="30dp" />
-
-<!-- Descripción -->
+    <!-- Descripción -->
 <EditText
     android:id="@+id/descripcion_input"
     android:layout_width="match_parent"
@@ -26,65 +19,116 @@ tools:context="mx.edu.itchetumal.concursomovil8.Fragment2">
     android:nestedScrollingEnabled="true"
     android:paddingBottom="16dp"
     android:paddingTop="16dp"
-    android:layout_below="@+id/numeroCliente"
-    android:layout_alignParentEnd="true" />
+    android:layout_above="@+id/aceptar_reservacion"
+    android:layout_alignEnd="@+id/user" />
 
 <!-- Etiqueta Fecha -->
-<TextView
-    android:id="@+id/fecha_text"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:paddingTop="16dp"
-    android:text="Fecha"
-    android:textAppearance="?android:attr/textAppearanceSmall"
-    android:textColor="@android:color/black"
-    android:layout_above="@+id/fecha_ejemplo_text"
-    android:layout_alignParentStart="true" />
 
-<!-- Fecha -->
-<TextView
-    android:id="@+id/fecha_ejemplo_text"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:text="2015/05/17"
-    android:textAppearance="?android:attr/textAppearanceSmall"
-    android:layout_centerVertical="true"
-    android:layout_alignParentStart="true" />
+    <!-- Fecha -->
 
-<EditText
+    <EditText
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:id="@+id/origen"
-    android:text="Origen"
-    android:layout_marginTop="82dp"
-    android:layout_below="@+id/numeroCliente"
-    android:layout_alignParentStart="true" />
+    android:hint="Origen"
+        android:layout_below="@+id/textView8"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="19dp" />
 
     <Button
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:text="Aceptar"
-    android:id="@+id/aceptar_taxi"
-        android:layout_below="@+id/fecha_ejemplo_text"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="41dp" />
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Aceptar"
+        android:textColor="@color/dialog_divider"
+        android:drawableRight="@drawable/paloma"
+        android:background="@drawable/button"
+        android:id="@+id/aceptar_reservacion"
+        android:layout_marginBottom="73dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true" />
 
-<Button
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:text="Cancelar"
-    android:id="@+id/cancelar_taxi"
-    android:layout_alignTop="@+id/aceptar_taxi"
-    android:layout_centerHorizontal="true" />
 
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/destino"
-        android:layout_above="@+id/fecha_text"
+        android:hint="Destino"
+        android:layout_centerVertical="true"
         android:layout_alignParentStart="true"
+        android:layout_alignEnd="@+id/origen" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:text="Cliente:"
+        android:id="@+id/textView2"
+        android:textSize="30dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignEnd="@+id/aceptar_taxi" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingTop="16dp"
+        android:text="Fecha"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:textColor="@android:color/black"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/textView2"
+        android:layout_alignParentLeft="true" />
+
+    <TextView
+        android:id="@+id/fecha_t"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="2015/05/17"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:layout_above="@+id/textView8"
+        android:layout_alignEnd="@+id/textView8" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingTop="16dp"
+        android:text="Hora"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:textColor="@android:color/black"
+        android:layout_marginLeft="47dp"
+        android:layout_above="@+id/textView8"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:id="@+id/hora2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="13:00"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:layout_alignBottom="@+id/textView5"
         android:layout_alignParentEnd="true"
-        android:text="Destino" />
+        android:layout_marginEnd="56dp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:text="Usuario"
+        android:id="@+id/user"
+        android:textSize="30dp"
+        android:layout_alignParentTop="true"
+        android:layout_toEndOf="@+id/textView2"
+        android:layout_alignStart="@+id/textView5" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="Reservación del Taxi"
+        android:id="@+id/textView8"
+        android:layout_below="@+id/textView3"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="61dp" />
 
 
 </RelativeLayout>

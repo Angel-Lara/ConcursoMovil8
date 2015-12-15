@@ -11,9 +11,10 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="40dp"
-        android:text="Cliente"
+        android:text="Cliente:"
         android:id="@+id/numeroCliente"
-        android:textSize="30dp" />
+        android:textSize="30dp"
+        android:layout_alignEnd="@+id/aceptar_reservacion" />
 
     <!-- Descripción -->
     <EditText
@@ -25,49 +26,98 @@
         android:nestedScrollingEnabled="true"
         android:paddingBottom="16dp"
         android:paddingTop="16dp"
-        android:layout_below="@+id/numeroCliente"
-        android:layout_alignParentStart="true" />
+        android:layout_above="@+id/aceptar_reservacion"
+        android:layout_alignParentEnd="true"
+        android:layout_marginBottom="65dp" />
 
     <!-- Etiqueta Fecha -->
     <TextView
         android:id="@+id/fecha_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_below="@+id/descripcion_input"
         android:paddingTop="16dp"
         android:text="Fecha"
         android:textAppearance="?android:attr/textAppearanceSmall"
-        android:textColor="@android:color/black" />
+        android:textColor="@android:color/black"
+        android:layout_below="@+id/numeroCliente"
+        android:layout_alignParentStart="true" />
 
     <!-- Fecha -->
     <TextView
         android:id="@+id/fecha_ejemplo_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/fecha_text"
         android:text="2015/05/17"
-        android:textAppearance="?android:attr/textAppearanceSmall" />
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:layout_alignBottom="@+id/fecha_text"
+        android:layout_toEndOf="@+id/categoria_texto" />
 
+    <!-- Categoría -->
+    <Spinner
+        android:id="@+id/actividadGym"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:entries="@array/actividades"
+        android:layout_marginTop="31dp"
+        android:layout_below="@+id/categoria_texto"
+        android:layout_alignParentStart="true"
+        android:layout_alignEnd="@+id/fecha_ejemplo_text" />
 
+    <!-- Etiqueta Categoría -->
+    <TextView
+        android:id="@+id/categoria_texto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingTop="16dp"
+        android:text="Categoría"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:textColor="@android:color/black"
+        android:layout_marginTop="49dp"
+        android:layout_below="@+id/fecha_text"
+        android:layout_alignParentStart="true" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Aceptar"
+        android:textColor="@color/dialog_divider"
+        android:drawableRight="@drawable/paloma"
+        android:background="@drawable/button"
         android:id="@+id/aceptar_reservacion"
-        android:layout_marginTop="41dp"
-        android:layout_below="@+id/fecha_ejemplo_text"
-        android:layout_toEndOf="@+id/fecha_text" />
+        android:layout_marginBottom="73dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true" />
 
-    <Button
+
+    <TextView
+        android:id="@+id/hora"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Cancelar"
-        android:id="@+id/cancelar_reservacion"
-        android:layout_alignBottom="@+id/aceptar_reservacion"
-        android:layout_centerHorizontal="true" />
+        android:paddingTop="16dp"
+        android:text="Hora"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:textColor="@android:color/black"
+        android:layout_above="@+id/categoria_texto"
+        android:layout_alignEnd="@+id/numeroCliente" />
+
+    <TextView
+        android:id="@+id/Hora_example"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="13:00"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:layout_alignBottom="@+id/hora"
+        android:layout_toEndOf="@+id/hora"
+        android:layout_marginStart="31dp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:text="Usuario"
+        android:id="@+id/User"
+        android:textSize="30dp"
+        android:layout_alignParentTop="true"
+        android:layout_toEndOf="@+id/fecha_ejemplo_text" />
 
 
 </RelativeLayout>

@@ -11,11 +11,13 @@
         android:scaleType="centerCrop" />
 
     <TextView
+        android:id="@+id/Ejemplo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/usuario"
+
         android:textAppearance="@style/TextAppearance.AppCompat.Large.Inverse"
         android:textStyle="bold"
+
         android:layout_gravity="bottom"
         android:layout_marginBottom="10dp"
         android:layout_marginLeft="10dp" />
