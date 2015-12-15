@@ -1,7 +1,5 @@
 package mx.edu.itchetumal.concursomovil8;
 
-import android.content.ContentValues;
-import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
@@ -10,18 +8,16 @@ import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.FrameLayout;
 import android.widget.TextView;
-import android.view.View.OnClickListener;
+import android.widget.Toast;
 
-import mx.edu.itchetumal.concursomovil8.bd.UsuariosSQLiteHelper;
-
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     private Toolbar appbar;
     private DrawerLayout drawerLayout;
@@ -34,14 +30,20 @@ public class MainActivity extends AppCompatActivity {
     private Button btnActualizar;
     private Button btnEliminar;
     private Button btnConsultar;
-
+    private FrameLayout actividad_uno;
     private SQLiteDatabase db;
-
+    private Fragment fragment = null;
+    boolean fragmentTransaction = false;
+    TextView t;
+    TextView usFrag1;
+    public static String user ;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        user = getIntent().getExtras().getString("USUARIO");
 
+        Toast.makeText(getApplicationContext(), user, Toast.LENGTH_LONG).show();
         appbar = (Toolbar)findViewById(R.id.appbar);
         setSupportActionBar(appbar);
 
@@ -53,51 +55,56 @@ public class MainActivity extends AppCompatActivity {
 
 
         navView = (NavigationView)findViewById(R.id.navview);
+
+        fragmentTransaction = true;
         navView.setNavigationItemSelectedListener(
-            new NavigationView.OnNavigationItemSelectedListener() {
-                @Override
-                public boolean onNavigationItemSelected(MenuItem menuItem) {
+                new NavigationView.OnNavigationItemSelectedListener() {
 
-                    boolean fragmentTransaction = false;
-                    Fragment fragment = null;
+                    @Override
+                    public boolean onNavigationItemSelected(MenuItem menuItem) {
 
-                    switch (menuItem.getItemId()) {
-                        case R.id.menu_seccion_1:
-                            fragment = new Fragment1();
-                            fragmentTransaction = true;
-                            break;
-                        case R.id.menu_seccion_2:
-                            fragment = new Fragment2();
-                            fragmentTransaction = true;
-                            break;
-                        case R.id.menu_seccion_3:
-                            fragment = new Fragment3();
-                            fragmentTransaction = true;
-                            break;
-                        case R.id.menu_seccion_4:
-                            fragment = new Fragment4();
-                            fragmentTransaction = true;
-                            break;
-                        case R.id.menu_seccion_5:
-                            fragment = new Fragment5();
-                            fragmentTransaction = true;
-                            break;
+
+
+
+                        switch (menuItem.getItemId()) {
+                            case R.id.menu_seccion_1:
+                                fragment = new Fragment1();
+                                fragmentTransaction = true;
+
+                                break;
+                            case R.id.menu_seccion_2:
+                                fragment = new Fragment2();
+                                fragmentTransaction = true;
+                                break;
+                            case R.id.menu_seccion_3:
+                                fragment = new Fragment3();
+                                fragmentTransaction = true;
+                                break;
+                            case R.id.menu_seccion_4:
+                                fragment = new Fragment4();
+                                fragmentTransaction = true;
+                                break;
+                            case R.id.menu_seccion_5:
+                                fragment = new Fragment5();
+                                fragmentTransaction = true;
+                                break;
+                        }
+
+                        if (fragmentTransaction) {
+                            getSupportFragmentManager().beginTransaction()
+                                    .replace(R.id.conten, fragment)
+                                    .commit();
+
+                            menuItem.setChecked(true);
+                            getSupportActionBar().setTitle(menuItem.getTitle());
+                        }
+
+                        drawerLayout.closeDrawers();
+
+                        return true;
                     }
-
-                    if(fragmentTransaction) {
-                        getSupportFragmentManager().beginTransaction()
-                                .replace(R.id.content_frame, fragment)
-                                .commit();
-
-                        menuItem.setChecked(true);
-                        getSupportActionBar().setTitle(menuItem.getTitle());
-                    }
-
-                    drawerLayout.closeDrawers();
-
-                    return true;
-                }
-            });
+                });
+        init_home();
     }
 
     @Override
@@ -116,9 +123,32 @@ public class MainActivity extends AppCompatActivity {
         switch(item.getItemId()) {
             case android.R.id.home:
                 drawerLayout.openDrawer(GravityCompat.START);
+                t = (TextView)findViewById(R.id.Ejemplo);
+                t.setOnClickListener(this);
+                t.setText(user.toString());
+                extra(user.toString());
                 return true;
         }
 
         return super.onOptionsItemSelected(item);
+    }
+    public String extra(String us){
+        return us;
+    }
+    public void init_home(){
+        fragment = new HomePage();
+                getSupportFragmentManager().beginTransaction()
+                .replace(R.id.conten, fragment)
+                .commit();
+    }
+
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()){
+            case R.id.Ejemplo:
+                init_home();
+                drawerLayout.closeDrawers();
+                break;
+        }
     }
 }

@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">Conserje</string>
-
+    <string name="infoUser">Información del Usuario</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
     <string name="seccion_1">Reservación restaurante</string>
@@ -33,5 +33,20 @@
         <item>Area Niños</item>
         <item>Area Fumadores</item>
         <item>Area no Fumadores</item>
+    </string-array>
+    <!-- Categorías -->
+    <string-array name="Total_personas_porMesa">
+        <item>En Barra</item>
+        <item>Mesa para 2</item>
+        <item>Mesa para 4</item>
+        <item>Mesa para 6</item>
+        <item>Mesa para 8</item>
+    </string-array>
+    <string-array name="actividades">
+        <item>Aerobics</item>
+        <item>Aparatos</item>
+        <item>Spinning</item>
+        <item>Zumba</item>
+        <item>Tae-bo</item>
     </string-array>
 </resources>

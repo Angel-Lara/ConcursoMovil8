@@ -8,13 +8,6 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="mx.edu.itchetumal.concursomovil8.Fragment1">
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:text="Cliente"
-        android:id="@+id/numeroCliente"
-        android:textSize="30dp" />
-
     <!-- Descripción -->
     <EditText
         android:id="@+id/descripcion_input"
@@ -25,46 +18,88 @@
         android:nestedScrollingEnabled="true"
         android:paddingBottom="16dp"
         android:paddingTop="16dp"
-        android:layout_below="@+id/numeroCliente"
-        android:layout_alignParentStart="true" />
+        android:layout_above="@+id/aceptar_reservacion"
+        android:layout_alignParentEnd="true"
+        android:layout_marginBottom="65dp" />
 
     <!-- Etiqueta Fecha -->
     <TextView
         android:id="@+id/fecha_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_below="@+id/descripcion_input"
         android:paddingTop="16dp"
         android:text="Fecha"
         android:textAppearance="?android:attr/textAppearanceSmall"
-        android:textColor="@android:color/black" />
+        android:textColor="@android:color/black"
+        android:layout_above="@+id/descripcion_input"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="88dp" />
 
     <!-- Fecha -->
     <TextView
         android:id="@+id/fecha_ejemplo_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/fecha_text"
         android:text="2015/05/17"
-        android:textAppearance="?android:attr/textAppearanceSmall" />
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:layout_alignBottom="@+id/fecha_text"
+        android:layout_toEndOf="@+id/fecha_text"
+        android:layout_marginStart="43dp" />
 
     <!-- Categoría -->
-    <Spinner
-        android:id="@+id/categoria_spinner"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/categoria_texto"
-        android:entries="@array/entradas_categoria" />
 
+    <!-- Etiqueta Categoría -->
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Cancelar"
-        android:id="@+id/cancelar_reservacion"
-        android:layout_below="@+id/categoria_spinner"
-        android:layout_toEndOf="@+id/aceptar_reservacion" />
+        android:text="Aceptar"
+        android:textColor="@color/dialog_divider"
+        android:drawableRight="@drawable/paloma"
+        android:background="@drawable/button"
+        android:id="@+id/aceptar_reservacion"
+        android:layout_marginBottom="73dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:id="@+id/hora"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingTop="16dp"
+        android:text="Hora"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:textColor="@android:color/black"
+        android:layout_alignBottom="@+id/Hora_example"
+        android:layout_alignEnd="@+id/aceptar_reservacion" />
+
+    <TextView
+        android:id="@+id/Hora_example"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="13:00"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:layout_alignTop="@+id/fecha_ejemplo_text"
+        android:layout_toEndOf="@+id/hora"
+        android:layout_marginStart="33dp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:text="Usuario"
+        android:id="@+id/User"
+        android:textSize="30dp"
+        android:layout_alignParentTop="true"
+        android:layout_toEndOf="@+id/fecha_ejemplo_text" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:text="Cliente:"
+        android:id="@+id/textView14"
+        android:textSize="30dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:layout_toStartOf="@+id/textView13" />
 
 
 </RelativeLayout>
