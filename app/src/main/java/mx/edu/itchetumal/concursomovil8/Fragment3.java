@@ -113,11 +113,11 @@ public class Fragment3 extends Fragment implements View.OnClickListener, Adapter
         /**
          * Set Up Current Date Into dialog
          */
-        Calendar calender = Calendar.getInstance();
+        Calendar calendar = Calendar.getInstance();
         Bundle args = new Bundle();
-        args.putInt("year", calender.get(Calendar.YEAR));
-        args.putInt("month", calender.get(Calendar.MONTH));
-        args.putInt("day", calender.get(Calendar.DAY_OF_MONTH));
+        args.putInt("year", calendar.get(Calendar.YEAR));
+        args.putInt("month", calendar.get(Calendar.MONTH));
+        args.putInt("day", calendar.get(Calendar.DAY_OF_MONTH));
         date.setArguments(args);
         /**
          * Set Call back to capture selected date
@@ -136,10 +136,10 @@ public class Fragment3 extends Fragment implements View.OnClickListener, Adapter
 
     public void actualizarHora() {
         // Setear en el textview la fecha
-        Calendar calender = Calendar.getInstance();
+        Calendar calendar = Calendar.getInstance();
         Bundle args = new Bundle();
-        args.putInt("hora", calender.get(Calendar.HOUR));
-        args.putInt("min", calender.get(Calendar.MINUTE));
+        args.putInt("hora", calendar.get(Calendar.HOUR));
+        args.putInt("min", calendar.get(Calendar.MINUTE));
 
         h.setArguments(args);
         /**
